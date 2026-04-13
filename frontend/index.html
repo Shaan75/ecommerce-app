@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopEasy</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">🛍️ ShopEasy</div>
+    <button class="btn-primary" onclick="openModal()">+ Add Product</button>
+  </nav>
+
+  <!-- SEARCH + FILTER BAR -->
+<div class="search-container">
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍  Search products by name..."
+    oninput="handleSearch()"
+  />
+  <select id="priceFilter" onchange="handleSearch()">
+    <option value="all">All Prices</option>
+    <option value="0-500">Under ₹500</option>
+    <option value="500-1000">₹500 – ₹1,000</option>
+    <option value="1000-2000">₹1,000 – ₹2,000</option>
+    <option value="2000-5000">₹2,000 – ₹5,000</option>
+    <option value="5000+">Above ₹5,000</option>
+  </select>
+</div>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- Loading state -->
+    <div id="loadingState" class="state-container">
+      <div class="spinner"></div>
+      <p>Loading products...</p>
+    </div>
+
+    <!-- Empty state -->
+    <div id="emptyState" class="state-container hidden">
+      <div class="empty-icon">📦</div>
+      <h2>No products available</h2>
+      <p>Click "Add Product" to get started!</p>
+    </div>
+
+    <!-- Product grid -->
+    <div id="productGrid" class="product-grid hidden"></div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 ShopEasy. All rights reserved.</p>
+  </footer>
+
+  <!-- MODAL -->
+  <div id="modalOverlay" class="modal-overlay hidden" onclick="handleOverlayClick(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Product</h2>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Product Name</label>
+          <input type="text" id="inputName" placeholder="e.g. Wireless Headphones" />
+          <span class="error-msg" id="errorName"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Price (₹)</label>
+          <input type="number" id="inputPrice" placeholder="e.g. 1999" />
+          <span class="error-msg" id="errorPrice"></span>
+        </div>
+
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="text" id="inputImage" placeholder="https://..." />
+          <span class="error-msg" id="errorImage"></span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn-primary" onclick="handleSubmit()">Save Product</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
