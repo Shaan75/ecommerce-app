@@ -91,7 +91,7 @@ Open `frontend/index.html` directly in your browser.
 
 ## 📸 Screenshots
 
-> Homepage with product grid, search, and price filter.
+![ShopEasy Screenshot](./assets/screenshot.png)
 
 ---
 
