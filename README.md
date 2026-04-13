@@ -97,5 +97,5 @@ Open `frontend/index.html` directly in your browser.
 
 ## 👤 Author
 
-**Shaun**  
+**Shaunak**  
 Assignment submission — Full Stack E-commerce Mini App
