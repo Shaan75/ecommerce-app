@@ -1,4 +1,4 @@
-const API = 'https://shopeasy-backend-ci41.onrender.com';
+const API = 'https://shopeasy-api-vc0d.onrender.com';
 
 let allProducts = [];
 let editingId = null;
